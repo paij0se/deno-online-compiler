@@ -1,1 +1,1 @@
-console.log(Deno.version)
+fetch("https://www.npmjs.com/package/ansi-to-html").then(r=>r.text()).then(d=>console.log(d))

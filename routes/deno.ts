@@ -1,13 +1,14 @@
 import { Router, json } from "express";
 import { exec } from "child_process";
 import { writeFile } from "fs";
-import Convert =require( "ansi-to-html");
+
 const router = Router();
-const deno = "deno run --allow-net --no-check  execute.ts";
-const convert = new Convert();
+const deno =
+  "/Users/ranon-rat/.deno/bin/deno run --allow-net --no-check  execute.ts";
+
 const regex =
   /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g;
-router.post("/code", (req, res) => {
+router.post("/code", async (req, res) => {
   const { code } = req.body;
   console.log(code);
 
@@ -18,7 +19,7 @@ router.post("/code", (req, res) => {
     }
   });
   exec(deno, { timeout: 1000 }, (_, stdout, stderr) => {
-    let out = convert.toHtml((stdout || stderr).replace(regex, ""));
+    let out = (stdout || stderr).replace(regex, "");
     console.log(out);
     res.json({
       out: out,

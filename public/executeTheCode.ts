@@ -13,5 +13,11 @@ function sendAndReceive() {
     },
   })
     .then((r) => r.json())
-    .then((d: api) => (document.getElementById("output")!.innerHTML = d.out));
+    .then(
+      (d: api) =>
+        (document.getElementById("output")!.innerHTML = d.out.replace(
+          /</g,
+          "<span><</span>"
+        ))
+    );
 }
