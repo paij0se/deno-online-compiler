@@ -4,7 +4,7 @@ import { writeFile } from "fs";
 
 const router = Router();
 const deno =
-  "/Users/ranon-rat/.deno/bin/deno run --allow-net --no-check  execute.ts";
+  "./deno run --allow-net --no-check  execute.ts";
 
 const regex =
   /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g;
