@@ -4,7 +4,7 @@
   "description": "lol",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tsc index.ts && cd public && npx tsc script.ts && cd ..&&cd routes && npx tsc *.ts &&cd ..&& nodemon index.js",
+    "dev": "npx tsc --build tsconfig.json; nodemon index.js",
     "start": "node index.js"
   },
   "author": "",
