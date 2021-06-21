@@ -1,7 +1,7 @@
 import { Router, json } from "express";
 import { exec } from "child_process";
 import { writeFile } from "fs";
-import Convert from "ansi-to-html";
+import Convert =require( "ansi-to-html");
 const router = Router();
 const deno = "deno run --allow-net --no-check  execute.ts";
 const convert = new Convert();

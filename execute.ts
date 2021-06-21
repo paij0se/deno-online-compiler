@@ -1,1 +1,1 @@
-console.log('\x1b[30mblack\x1b[37mwhite')
+console.log(Deno.version)
