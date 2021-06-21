@@ -68,7 +68,8 @@ body {
 #output-code{
 text-align: left;
   color:rgb(48, 252, 48);
-  min-height: 30em;
+  height: 30em;
   width: 40em;
   background-color: #000;
+  hyphens: none;
 }
