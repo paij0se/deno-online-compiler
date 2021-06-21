@@ -9,9 +9,9 @@ is the 1st version, so its a little bit  shit right now!
 
 thanks to:  
 
-- jorge https://github.com/JorgeArreolaS
+- jorge: https://github.com/JorgeArreolaS
 
-- ranon-rat; https://github.com/ranon-rat
+- ranon-rat: https://github.com/ranon-rat
 
 - existentiality: https://github.com/existentiality
 
