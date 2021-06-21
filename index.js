@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express = require("express");
+var path_1 = require("path");
+var app = express();
+var PORT = process.env.PORT || 8000;
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(require("./routes/deno"));
+app.use(express.static(path_1.join(__dirname, "public")));
+app.listen(PORT, function () { return console.log("server on http://localhost:" + PORT); });

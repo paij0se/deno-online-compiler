@@ -1,1 +1,1 @@
-lpdmk
+console.log(Deno.version)
