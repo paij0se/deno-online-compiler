@@ -35,31 +35,26 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
-var child_process_1 = require("child_process");
-var fs_1 = require("fs");
+var axios_1 = __importDefault(require("axios"));
 var router = express_1.Router();
-var deno = "./deno run --allow-net --no-check  execute.ts";
-var regex = /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g;
 router.post("/code", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var code;
     return __generator(this, function (_a) {
         code = req.body.code;
         console.log(code);
-        fs_1.writeFile("execute.ts", code, function (err) {
-            if (err) {
-                console.error(err);
-                return;
-            }
-        });
-        child_process_1.exec(deno, { timeout: 1000 }, function (_, stdout, stderr) {
-            var out = (stdout || stderr).replace(regex, "");
-            console.log(out);
-            res.json({
-                out: out,
-            });
-        });
+        axios_1.default
+            .post("https://api-deno-compiler.elpanajose.repl.co/code", {
+            code: code,
+        })
+            .then(function (r) {
+            console.log(r.data.out);
+            res.json({ out: r.data.out });
+        }).catch(function (err) { return err ? res.json({ out: "to many requests" }) : null; });
         return [2 /*return*/];
     });
 }); });
