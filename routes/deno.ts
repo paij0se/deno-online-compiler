@@ -8,7 +8,7 @@ router.post("/code", async (req, res) => {
   console.log(code);
 
   axios
-    .post("https://api-deno-compiler.elpanajose.repl.co/code", {
+    .post("https://api-deno-compiler.herokuapp.com/code", {
       code: code,
     })
     .then((r) => {
