@@ -48,7 +48,7 @@ router.post("/code", function (req, res) { return __awaiter(void 0, void 0, void
         code = req.body.code;
         console.log(code);
         axios_1.default
-            .post("https://api-deno-compiler.elpanajose.repl.co/code", {
+            .post("https://api-deno-compiler.herokuapp.com/code", {
             code: code,
         })
             .then(function (r) {
