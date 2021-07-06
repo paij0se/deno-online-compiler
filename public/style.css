@@ -12,7 +12,7 @@ body {
 }
 
 footer a {
-  color: green;
+  color: black;
 }
 textarea {
   min-height: 400px;
@@ -65,10 +65,23 @@ body {
   color: var(--text-color);
 }
 
-#output-code{
-text-align: left;
-  color:rgb(48, 252, 48);
+footer a {
+  color: green;
+}
+
+#output-code {
+  text-align: left;
+  color: rgb(48, 252, 48);
   height: 30em;
+  width: 40em;
+  background-color: #000;
+  hyphens: none;
+}
+
+#ApiStatus {
+  text-align: left;
+  color: rgb(48, 252, 48);
+  height: 10em;
   width: 40em;
   background-color: #000;
   hyphens: none;

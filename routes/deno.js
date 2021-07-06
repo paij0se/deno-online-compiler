@@ -46,13 +46,13 @@ router.post("/code", function (req, res) { return __awaiter(void 0, void 0, void
     var code;
     return __generator(this, function (_a) {
         code = req.body.code;
-        console.log(code);
+        console.log("input: " + code);
         axios_1.default
             .post("https://api-deno-compiler.herokuapp.com/code", {
             code: code,
         })
             .then(function (r) {
-            console.log(r.data.out);
+            console.log("output: " + r.data.out);
             res.json({ out: r.data.out });
         }).catch(function (err) { return err ? res.json({ out: "to many requests" }) : null; });
         return [2 /*return*/];
