@@ -12,8 +12,12 @@ router.post("/code", async (req, res) => {
       code: code,
     })
     .then((r) => {
-      console.log(`output: ${r.data.out}`);
-      res.json({ out: r.data.out });
+      if (r.data.out === "") {
+        res.json({ out: "Api response with a empty output" });
+      } else {
+        console.log(`output: ${r.data.out}`);
+        res.json({ out: r.data.out });
+      }
     }).catch((err) => err ? res.json({ out: "to many requests" }) : null);
 });
 
