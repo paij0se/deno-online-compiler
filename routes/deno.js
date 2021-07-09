@@ -52,8 +52,13 @@ router.post("/code", function (req, res) { return __awaiter(void 0, void 0, void
             code: code,
         })
             .then(function (r) {
-            console.log("output: " + r.data.out);
-            res.json({ out: r.data.out });
+            if (r.data.out === "") {
+                res.json({ out: "Api response with a empty output" });
+            }
+            else {
+                console.log("output: " + r.data.out);
+                res.json({ out: r.data.out });
+            }
         }).catch(function (err) { return err ? res.json({ out: "to many requests" }) : null; });
         return [2 /*return*/];
     });

@@ -1,5 +1,3 @@
-<div align ="center">
-
 <h1>deno-online-compiler</h1>
 
 
@@ -26,7 +24,5 @@ thanks to:
  <h1>todo</h1>
 
 - add syntax highlighting
-
-</div>
 
 
