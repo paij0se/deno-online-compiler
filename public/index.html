@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>deno online compiler</title>
+    <title>Deno online compiler</title>
     <link
       rel="shortcut icon"
       href="https://cdn.discordapp.com/emojis/720816736122961960.gif?v=1"
@@ -16,13 +16,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
   </head>
 
   <body>
     <div align="center">
-      <button id="theme-switcher" class="btn">Switch themes</button>
-      <h1>compile your deno code</h1>
+      <h1>Execute your deno code</h1>
       <p>note: you only have --allow-net flag</p>
     </div>
     <div class="container p-3 justify-content-center">
@@ -45,7 +43,7 @@ console.log(Deno.version)</textarea
           <!--button-->
           <script src="status.js"></script>
           <script src="getTheCode.js"></script>
-          <button class="btn" onclick="sendAndReceive()">execute</button>
+          <button class="btn" onclick="sendAndReceive()"><p>execute</p></button>
         </div>
       </div>
     </div>

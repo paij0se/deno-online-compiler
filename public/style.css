@@ -1,5 +1,18 @@
-body {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+@import url("https://fonts.googleapis.com/css?family=Comfortaa");
+
+code,
+textarea {
+  font-family: "Comfortaa", cursive;
+  font-size: 2rem;
+}
+
+footer a,
+p,
+h1 {
+  font-family: "Comfortaa", cursive;
+  font-size: 2rem;
+  color: #f0f0f0;
 }
 .center {
   display: block;
@@ -11,38 +24,16 @@ body {
   position: relative;
 }
 
-footer a {
-  color: black;
-}
 textarea {
   min-height: 400px;
 }
 
-:root {
-  --background-color: #d8e4dd;
-  --text-color: #000000;
-  --contribuitor-color: rgb(177, 177, 177);
-  --button-background-color: #333;
-  --button-text-color: #fff;
-  --button-background-hover: #000;
-}
-* {
-  border-color: #000000;
-}
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: sans-serif;
-}
-[data-theme="dark"] {
-  --background-color: #23272a;
-  --text-color: #fff;
-  --button-background-color: #dcdcdc;
-  --contribuitor-color: rgb(56, 56, 56);
-  --button-text-color: black;
+  text-align: center;
+  background-color: #212529;
 }
 
 .btn {
@@ -53,20 +44,7 @@ body {
   outline: none;
   font-size: 20px;
   margin: 20px;
-  background-color: var(--button-background-color);
-  border: 3px solid var(--button-background-color);
-  color: var(--button-text-color);
-  transition: background 300ms;
-  transition: color 300ms;
-}
-
-.btn:hover {
-  background: var(--background-color);
-  color: var(--text-color);
-}
-
-footer a {
-  color: green;
+  background-color: #212529;
 }
 
 #output-code {
