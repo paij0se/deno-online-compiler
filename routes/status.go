@@ -1,8 +1,9 @@
 package main
 
 import (
+	"bytes"
+	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"time"
@@ -10,16 +11,15 @@ import (
 
 func main() {
 	start := time.Now()
-	resp, err := http.Get("https://api-deno-compiler.herokuapp.com/code")
+	postBody, _ := json.Marshal(map[string]string{
+		"code": `console.log("hello world")`,
+	})
+	responseBody := bytes.NewBuffer(postBody)
+	resp, err := http.Post("https://api-deno-compiler.elpanajose.repl.co/code", "application/json", responseBody)
 	if err != nil {
-		log.Fatalln("ERROR 400 SENDING THE REQUEST TO THE API", err)
+		log.Fatalf("An Error Occured %v", err, resp)
 	}
 	duration := time.Since(start)
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Fatalln(err)
-	}
+
 	fmt.Printf("API Response Time: %d%s\n", duration.Milliseconds(), "ms")
-	fmt.Println("Response 200 All Good")
-	fmt.Println(string(body))
 }

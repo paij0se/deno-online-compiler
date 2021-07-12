@@ -48,16 +48,16 @@ router.post("/code", function (req, res) { return __awaiter(void 0, void 0, void
         code = req.body.code;
         console.log("input: " + code);
         axios_1.default
-            .post("https://api-deno-compiler.herokuapp.com/code", {
+            .post("https://api-deno-compiler.elpanajose.repl.co/code", {
             code: code,
         })
             .then(function (r) {
-            if (r.data.out === "") {
+            if (r.data === "") {
                 res.json({ out: "Api response with a empty output" });
             }
             else {
-                console.log("output: " + r.data.out);
-                res.json({ out: r.data.out });
+                console.log("output: " + r.data);
+                res.json({ out: r.data });
             }
         }).catch(function (err) { return err ? res.json({ out: "to many requests" }) : null; });
         return [2 /*return*/];
