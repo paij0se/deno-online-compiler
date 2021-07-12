@@ -8,15 +8,15 @@ router.post("/code", async (req, res) => {
   console.log(`input: ${code}`);
 
   axios
-    .post("https://api-deno-compiler.herokuapp.com/code", {
+    .post("https://api-deno-compiler.elpanajose.repl.co/code", {
       code: code,
     })
     .then((r) => {
-      if (r.data.out === "") {
+      if (r.data === "") {
         res.json({ out: "Api response with a empty output" });
       } else {
-        console.log(`output: ${r.data.out}`);
-        res.json({ out: r.data.out });
+        console.log(`output: ${r.data}`);
+        res.json({ out: r.data });
       }
     }).catch((err) => err ? res.json({ out: "to many requests" }) : null);
 });
