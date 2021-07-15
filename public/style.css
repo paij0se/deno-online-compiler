@@ -47,7 +47,6 @@ body {
   background-color: #212529;
 }
 
-
 #output-code {
   text-align: left;
   color: rgb(48, 252, 48);
@@ -55,14 +54,15 @@ body {
   width: 58vw;
   background-color: #000;
   hyphens: none;
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 #api-status {
   text-align: left;
   color: rgb(48, 252, 48);
-  height: 10em;
-  width: 20em;
+  height: 20vw;
+  width: 30vw;
   background-color: #000;
   hyphens: none;
+  font-size: 1.5vw;
 }
