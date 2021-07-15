@@ -54,7 +54,7 @@ body {
   width: 58vw;
   background-color: #000;
   hyphens: none;
-  font-size: 1.5vw;
+  font-size: 2vw;
 }
 
 #api-status {
@@ -64,5 +64,5 @@ body {
   width: 30vw;
   background-color: #000;
   hyphens: none;
-  font-size: 1.5vw;
+  font-size: 2vw;
 }
