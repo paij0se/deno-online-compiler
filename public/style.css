@@ -47,16 +47,18 @@ body {
   background-color: #212529;
 }
 
+
 #output-code {
   text-align: left;
   color: rgb(48, 252, 48);
-  height: 30em;
-  width: 40em;
+  height: 50vw;
+  width: 58vw;
   background-color: #000;
   hyphens: none;
+  font-size: 2vw;
 }
 
-#ApiStatus {
+#api-status {
   text-align: left;
   color: rgb(48, 252, 48);
   height: 10em;
