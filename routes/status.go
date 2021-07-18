@@ -15,7 +15,7 @@ func main() {
 		"code": `console.log("hello world")`,
 	})
 	responseBody := bytes.NewBuffer(postBody)
-	resp, err := http.Post("https://api-deno-compiler.elpanajose.repl.co/code", "application/json", responseBody)
+	resp, err := http.Post("https://api-deno-compiler.herokuapp.com/code", "application/json", responseBody)
 	if err != nil {
 		log.Fatalf("An Error Occured %v", err, resp)
 	}
