@@ -1,5 +1,7 @@
 node_modules
-*.js
 package-lock.json
 /routes/status
 test
+index.js
+routes/deno.js
+routes/statusApi.js

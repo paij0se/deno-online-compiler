@@ -13,6 +13,8 @@ h1 {
   font-family: "Comfortaa", cursive;
   font-size: 2rem;
   color: #f0f0f0;
+  align-items: center;
+  text-align: center;
 }
 .center {
   display: block;
@@ -31,9 +33,23 @@ textarea {
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   background-color: #212529;
+}
+
+select {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 4;
+  background-color: #212529;
+  color: #ffb7b7;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .btn {
@@ -45,6 +61,10 @@ body {
   font-size: 20px;
   margin: 20px;
   background-color: #212529;
+}
+
+#sel {
+  color: #000;
 }
 
 #output-code {
