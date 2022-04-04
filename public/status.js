@@ -1,7 +1,9 @@
 "use strict";
 var json = fetch("/status");
-json.then(function (r) {
+json
+    .then(function (r) {
     return r.json();
-}).then(function (jsonData) {
+})
+    .then(function (jsonData) {
     document.getElementById("status").innerHTML = jsonData.out;
 });

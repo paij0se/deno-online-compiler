@@ -15,11 +15,89 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
+    <!-- Themes -->
+    <link rel="stylesheet" href="syntax/lib/codemirror.css" />
+    <link rel="stylesheet" href="syntax/theme/3024-day.css" />
+    <link rel="stylesheet" href="syntax/theme/3024-night.css" />
+    <link rel="stylesheet" href="syntax/theme/abbott.css" />
+    <link rel="stylesheet" href="syntax/theme/abcdef.css" />
+    <link rel="stylesheet" href="syntax/theme/ambiance.css" />
+    <link rel="stylesheet" href="syntax/theme/ayu-dark.css" />
+    <link rel="stylesheet" href="syntax/theme/ayu-mirage.css" />
+    <link rel="stylesheet" href="syntax/theme/base16-dark.css" />
+    <link rel="stylesheet" href="syntax/theme/bespin.css" />
+    <link rel="stylesheet" href="syntax/theme/base16-light.css" />
+    <link rel="stylesheet" href="syntax/theme/blackboard.css" />
+    <link rel="stylesheet" href="syntax/theme/cobalt.css" />
+    <link rel="stylesheet" href="syntax/theme/colorforth.css" />
+    <link rel="stylesheet" href="syntax/theme/dracula.css" />
+    <link rel="stylesheet" href="syntax/theme/duotone-dark.css" />
+    <link rel="stylesheet" href="syntax/theme/duotone-light.css" />
+    <link rel="stylesheet" href="syntax/theme/eclipse.css" />
+    <link rel="stylesheet" href="syntax/theme/elegant.css" />
+    <link rel="stylesheet" href="syntax/theme/erlang-dark.css" />
+    <link rel="stylesheet" href="syntax/theme/gruvbox-dark.css" />
+    <link rel="stylesheet" href="syntax/theme/hopscotch.css" />
+    <link rel="stylesheet" href="syntax/theme/icecoder.css" />
+    <link rel="stylesheet" href="syntax/theme/isotope.css" />
+    <link rel="stylesheet" href="syntax/theme/juejin.css" />
+    <link rel="stylesheet" href="syntax/theme/lesser-dark.css" />
+    <link rel="stylesheet" href="syntax/theme/liquibyte.css" />
+    <link rel="stylesheet" href="syntax/theme/lucario.css" />
+    <link rel="stylesheet" href="syntax/theme/material.css" />
+    <link rel="stylesheet" href="syntax/theme/material-darker.css" />
+    <link rel="stylesheet" href="syntax/theme/material-palenight.css" />
+    <link rel="stylesheet" href="syntax/theme/material-ocean.css" />
+    <link rel="stylesheet" href="syntax/theme/mbo.css" />
+    <link rel="stylesheet" href="syntax/theme/mdn-like.css" />
+    <link rel="stylesheet" href="syntax/theme/midnight.css" />
+    <link rel="stylesheet" href="syntax/theme/monokai.css" />
+    <link rel="stylesheet" href="syntax/theme/moxer.css" />
+    <link rel="stylesheet" href="syntax/theme/neat.css" />
+    <link rel="stylesheet" href="syntax/theme/neo.css" />
+    <link rel="stylesheet" href="syntax/theme/night.css" />
+    <link rel="stylesheet" href="syntax/theme/nord.css" />
+    <link rel="stylesheet" href="syntax/theme/oceanic-next.css" />
+    <link rel="stylesheet" href="syntax/theme/panda-syntax.css" />
+    <link rel="stylesheet" href="syntax/theme/paraiso-dark.css" />
+    <link rel="stylesheet" href="syntax/theme/paraiso-light.css" />
+    <link rel="stylesheet" href="syntax/theme/pastel-on-dark.css" />
+    <link rel="stylesheet" href="syntax/theme/railscasts.css" />
+    <link rel="stylesheet" href="syntax/theme/rubyblue.css" />
+    <link rel="stylesheet" href="syntax/theme/seti.css" />
+    <link rel="stylesheet" href="syntax/theme/shadowfox.css" />
+    <link rel="stylesheet" href="syntax/theme/solarized.css" />
+    <link rel="stylesheet" href="syntax/theme/the-matrix.css" />
+    <link rel="stylesheet" href="syntax/theme/tomorrow-night-bright.css" />
+    <link rel="stylesheet" href="syntax/theme/tomorrow-night-eighties.css" />
+    <link rel="stylesheet" href="syntax/theme/ttcn.css" />
+    <link rel="stylesheet" href="syntax/theme/twilight.css" />
+    <link rel="stylesheet" href="syntax/theme/vibrant-ink.css" />
+    <link rel="stylesheet" href="syntax/theme/xq-dark.css" />
+    <link rel="stylesheet" href="syntax/theme/xq-light.css" />
+    <link rel="stylesheet" href="syntax/theme/yeti.css" />
+    <link rel="stylesheet" href="syntax/theme/idea.css" />
+    <link rel="stylesheet" href="syntax/theme/darcula.css" />
+    <link rel="stylesheet" href="syntax/theme/yonce.css" />
+    <link rel="stylesheet" href="syntax/theme/zenburn.css" />
+    <!-- CodeMirror stuff -->
+    <script src="syntax/lib/codemirror.js"></script>
+    <script src="syntax/addon/edit/closebrackets.js"></script>
+    <script src="syntax/mode/javascript/javascript.js"></script>
+    <script src="syntax/addon/edit/matchbrackets.js"></script>
+    <script src="syntax/addon/selection/active-line.js"></script>
+
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .CodeMirror {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+    </style>
   </head>
 
   <body>
-    <div align="center">
+    <div>
       <h1>Execute your deno code</h1>
       <p>note: you only have --allow-net flag</p>
     </div>
@@ -37,27 +115,158 @@
               spellcheck="false"
               required
             >
-console.log(Deno.version)</textarea
-            >
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 15 === 0) {
+      console.log("fizzbuzz");
+    } else if (i % 3 === 0) {
+      console.log("fizz");
+    } else if (i % 5 === 0) {
+      console.log("buzz");
+    } else {
+      console.log(i);
+    }
+  }
+}
+console.log(fizzBuzz(100));
+            </textarea>
+
+            <p id="sel">
+              Select a theme:
+              <select onchange="selectTheme()" id="select">
+                <option selected>default</option>
+                <option>3024-day</option>
+                <option>3024-night</option>
+                <option>abbott</option>
+                <option>abcdef</option>
+                <option>ambiance</option>
+                <option>ayu-dark</option>
+                <option>ayu-mirage</option>
+                <option>base16-dark</option>
+                <option>base16-light</option>
+                <option>bespin</option>
+                <option>blackboard</option>
+                <option>cobalt</option>
+                <option>colorforth</option>
+                <option>darcula</option>
+                <option>dracula</option>
+                <option>duotone-dark</option>
+                <option>duotone-light</option>
+                <option>eclipse</option>
+                <option>elegant</option>
+                <option>erlang-dark</option>
+                <option>gruvbox-dark</option>
+                <option>hopscotch</option>
+                <option>icecoder</option>
+                <option>idea</option>
+                <option>isotope</option>
+                <option>juejin</option>
+                <option>lesser-dark</option>
+                <option>liquibyte</option>
+                <option>lucario</option>
+                <option>material</option>
+                <option>material-darker</option>
+                <option>material-palenight</option>
+                <option>material-ocean</option>
+                <option>mbo</option>
+                <option>mdn-like</option>
+                <option>midnight</option>
+                <option>monokai</option>
+                <option>moxer</option>
+                <option>neat</option>
+                <option>neo</option>
+                <option>night</option>
+                <option>nord</option>
+                <option>oceanic-next</option>
+                <option>panda-syntax</option>
+                <option>paraiso-dark</option>
+                <option>paraiso-light</option>
+                <option>pastel-on-dark</option>
+                <option>railscasts</option>
+                <option>rubyblue</option>
+                <option>seti</option>
+                <option>shadowfox</option>
+                <option>solarized dark</option>
+                <option>solarized light</option>
+                <option>the-matrix</option>
+                <option>tomorrow-night-bright</option>
+                <option>tomorrow-night-eighties</option>
+                <option>ttcn</option>
+                <option>twilight</option>
+                <option>vibrant-ink</option>
+                <option>xq-dark</option>
+                <option>xq-light</option>
+                <option>yeti</option>
+                <option>yonce</option>
+                <option>zenburn</option>
+              </select>
+            </p>
           </div>
           <!--button-->
           <script src="status.js"></script>
           <script src="getTheCode.js"></script>
-          <button class="btn" onclick="sendAndReceive()"><p>execute</p></button>
+          <script>
+            var editor = CodeMirror.fromTextArea(
+              document.getElementById("code"),
+              {
+                lineNumbers: true,
+                matchBrackets: true,
+                styleActiveLine: true,
+                autoCloseBrackets: true,
+                mode: "text/typescript",
+              }
+            );
+            // display write code in the console
+            editor.on("change", function () {
+              document.getElementById("code").value = editor.getValue();
+            });
+
+            var input = document.getElementById("select");
+            function selectTheme() {
+              var theme = input.options[input.selectedIndex].textContent;
+              editor.setOption("theme", theme);
+              location.hash = "#" + theme;
+            }
+            var choice =
+              (location.hash && location.hash.slice(1)) ||
+              (document.location.search &&
+                decodeURIComponent(document.location.search.slice(1)));
+            if (choice) {
+              input.value = choice;
+              editor.setOption("theme", choice);
+            }
+
+            CodeMirror.on(window, "hashchange", function () {
+              var theme = location.hash.slice(1);
+              if (theme) {
+                input.value = theme;
+                selectTheme();
+              }
+            });
+          </script>
+          <div align="center">
+            <button class="btn" onclick="sendAndReceive()">
+              <p>execute</p>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-    <!--output-->
     <h1>Output</h1>
-    <pre id="output-code" tabindex="0"><code id="output"></code></pre>
-    <h1>Api Status</h1>
-    <pre id="api-status" tabindex="0"><code id="status"></code></pre>
-    <!--footer-->
-    <img src="https://cdn.discordapp.com/emojis/720816736122961960.gif?v=1" />
-    <footer align="center">
-      <a href="https://github.com/ELPanaJose/deno-online-compiler"
-        >source code of the page</a
-      >
-    </footer>
+    <div align="center">
+      <pre id="output-code" tabindex="0"><code id="output"></code></pre>
+      <h1>Api Status</h1>
+      <pre id="api-status" tabindex="0"><code id="status"></code></pre>
+      <img
+        src="https://cdn.discordapp.com/emojis/720816736122961960.gif"
+        width="128"
+        height="128"
+      />
+      <footer>
+        <a href="https://github.com/ELPanaJose/deno-online-compiler"
+          >source code of the page</a
+        >
+      </footer>
+    </div>
   </body>
 </html>
