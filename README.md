@@ -3,9 +3,7 @@
 
 A simple online compiler for deno
 
-is the 1st version, so its a little bit  shit right now!
-
-thanks to:  
+thanks to: 
 
 - jorge: https://github.com/JorgeArreolaS
 
@@ -21,8 +19,13 @@ thanks to:
 
 - and run `npm run dev`
 
- <h1>todo</h1>
+ <h1>Features</h1>
 
-- add syntax highlighting
+- 64 Highlight Colors
 
+<h1>Showcase</h1>
+
+
+
+https://user-images.githubusercontent.com/69026987/161460346-8ebe0115-5538-495c-ae53-c38c5a53fa9f.mp4
 
