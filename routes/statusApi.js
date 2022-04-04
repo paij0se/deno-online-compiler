@@ -38,10 +38,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var child_process_1 = require("child_process");
 var express_1 = require("express");
-var router = express_1.Router();
+var router = (0, express_1.Router)();
 router.get("/status", function (_, res) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
-        child_process_1.exec("./routes/status", function (_, stdout, stderr) {
+        (0, child_process_1.exec)("./routes/status", function (_, stdout, stderr) {
             var out = (stdout || stderr);
             res.json({ out: out });
         });

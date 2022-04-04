@@ -41,12 +41,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
 var axios_1 = __importDefault(require("axios"));
-var router = express_1.Router();
+var router = (0, express_1.Router)();
 router.post("/code", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var code;
     return __generator(this, function (_a) {
         code = req.body.code;
-        console.log("input: " + code);
+        console.log("input: ".concat(code));
         axios_1.default
             .post("https://api-deno-compiler.herokuapp.com/code", {
             code: code,
@@ -56,7 +56,7 @@ router.post("/code", function (req, res) { return __awaiter(void 0, void 0, void
                 res.json({ out: "Api response with a empty output" });
             }
             else {
-                console.log("output: " + r.data);
+                console.log("output: ".concat(r.data));
                 res.json({ out: r.data });
             }
         }).catch(function (err) { return err ? res.json({ out: "to many requests" }) : null; });

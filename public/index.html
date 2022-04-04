@@ -15,10 +15,7 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <meta
-      name="description"
-      content="A online compiler for deno"
-    />
+    <meta name="description" content="A online compiler for deno" />
     <meta
       property="og:image"
       content="https://cdn.discordapp.com/emojis/720816736122961960.gif"
@@ -94,6 +91,7 @@
     <script src="syntax/mode/javascript/javascript.js"></script>
     <script src="syntax/addon/edit/matchbrackets.js"></script>
     <script src="syntax/addon/selection/active-line.js"></script>
+    <script src="syntax/keymap/vim.js"></script>
 
     <link rel="stylesheet" href="style.css" />
     <style>
@@ -123,26 +121,50 @@
               spellcheck="false"
               required
             >
-function fizzBuzz(n) {
-  for (let i = 1; i <= n; i++) {
-    if (i % 15 === 0) {
-      console.log("fizzbuzz");
-    } else if (i % 3 === 0) {
-      console.log("fizz");
-    } else if (i % 5 === 0) {
-      console.log("buzz");
-    } else {
-      console.log(i);
-    }
-  }
-}
-console.log(fizzBuzz(100));
-            </textarea>
+import 'https://deno.land/x/corejs@v3.21.1/index.js'; // <- at the top of your entry point
 
-            <p id="sel">
+Object.hasOwn({ foo: 42 }, 'foo');     // => true
+
+[1, 2, 3, 4, 5, 6, 7].at(-3);          // => 5
+
+[1, 2, 3, 4, 5].groupBy(it => it % 2); // => { 1: [1, 3, 5], 0: [2, 4] }
+
+Promise.any([
+  Promise.resolve(1),
+  Promise.reject(2),
+  Promise.resolve(3),
+]).then(console.log);                  // => 1
+
+[1, 2, 3, 4, 5, 6, 7].values()
+  .drop(1)
+  .take(5)
+  .filter(it => it % 2)
+  .map(it => it ** 2)
+  .toArray();                          // => [9, 25]
+            </textarea>
+            <h2 align="center">Mode</h2>
+            <div  align="center">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="editor.setOption('keyMap', 'vim')"
+              >
+                <h1>vim</h1>
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="editor.setOption('keyMap', 'default')"
+              >
+                <h1>default</h1>
+              </button>
+            </div>
+            <p><span id="command-display"></span></p>
+            <p><span id="vim-mode"></span></p>
+            <h2>
               Select a theme:
               <select onchange="selectTheme()" id="select">
-                <option selected>default</option>
+                <option>default</option>
                 <option>3024-day</option>
                 <option>3024-night</option>
                 <option>abbott</option>
@@ -173,7 +195,7 @@ console.log(fizzBuzz(100));
                 <option>liquibyte</option>
                 <option>lucario</option>
                 <option>material</option>
-                <option>material-darker</option>
+                <option selected>material-darker</option>
                 <option>material-palenight</option>
                 <option>material-ocean</option>
                 <option>mbo</option>
@@ -208,9 +230,8 @@ console.log(fizzBuzz(100));
                 <option>yonce</option>
                 <option>zenburn</option>
               </select>
-            </p>
+            </h2>
           </div>
-          <!--button-->
           <script src="status.js"></script>
           <script src="getTheCode.js"></script>
           <script>
@@ -221,6 +242,8 @@ console.log(fizzBuzz(100));
                 matchBrackets: true,
                 styleActiveLine: true,
                 autoCloseBrackets: true,
+                //keyMap: "vim",
+                theme: "material-darker",
                 mode: "text/typescript",
               }
             );
@@ -228,7 +251,7 @@ console.log(fizzBuzz(100));
             editor.on("change", function () {
               document.getElementById("code").value = editor.getValue();
             });
-
+            editor.setSize("100%", "100%");
             var input = document.getElementById("select");
             function selectTheme() {
               var theme = input.options[input.selectedIndex].textContent;
@@ -251,8 +274,25 @@ console.log(fizzBuzz(100));
                 selectTheme();
               }
             });
+
+            // vim mode
+            var commandDisplay = document.getElementById("command-display");
+            var keys = "";
+            CodeMirror.on(editor, "vim-keypress", function (key) {
+              keys = keys + key;
+              commandDisplay.innerText = keys;
+            });
+            CodeMirror.on(editor, "vim-command-done", function (e) {
+              keys = "";
+              commandDisplay.innerHTML = keys;
+            });
+            var vimMode = document.getElementById("vim-mode");
+            CodeMirror.on(editor, "vim-mode-change", function (e) {
+              vimMode.innerText = JSON.stringify(e);
+            });
           </script>
           <div align="center">
+            <!--button-->
             <button class="btn" onclick="sendAndReceive()">
               <p>execute</p>
             </button>
