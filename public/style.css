@@ -16,6 +16,7 @@ h1 {
   align-items: center;
   text-align: center;
 }
+
 .center {
   display: block;
   margin-left: auto;
@@ -26,9 +27,6 @@ h1 {
   position: relative;
 }
 
-textarea {
-  min-height: 400px;
-}
 
 body {
   display: flex;
@@ -46,7 +44,7 @@ select {
   border: none;
   border-radius: 4;
   background-color: #212529;
-  color: #ffb7b7;
+  color: #ffb5da;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -85,4 +83,36 @@ select {
   background-color: #000;
   hyphens: none;
   font-size: 1.5vw;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #212529;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffb5da;
+  border-radius: 5px;
+}
+
+#command-display,#vim-mode  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #212529;
+  margin-left: 10px;
+}
+
+h2{
+  font-family: "Comfortaa", cursive;
+  font-size: 2rem;
+  color: #212529;
 }
