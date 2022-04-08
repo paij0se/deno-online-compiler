@@ -5,3 +5,5 @@ test
 index.js
 routes/deno.js
 routes/statusApi.js
+public/getTheCode.js
+public/status.js
