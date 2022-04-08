@@ -25,5 +25,4 @@ thanks to:
 
 <h1>Showcase</h1>
 
-https://user-images.githubusercontent.com/69026987/161652933-23ab41ea-943a-4296-bd6f-40afcd7fe070.mp4
 
