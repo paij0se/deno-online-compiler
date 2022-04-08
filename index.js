@@ -8,5 +8,5 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(require("./routes/deno"));
 app.use(require("./routes/statusApi"));
-app.use(express.static((0, path_1.join)(__dirname, "public")));
-app.listen(PORT, function () { return console.log("server on http://localhost:".concat(PORT)); });
+app.use(express.static(path_1.join(__dirname, "public")));
+app.listen(PORT, function () { return console.log("server on http://localhost:" + PORT); });
