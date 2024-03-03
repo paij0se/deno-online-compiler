@@ -57,6 +57,12 @@
   };
 </script>
 
+<svelte:head>
+  <style>
+    @import url("https://fonts.cdnfonts.com/css/cascadia-code");
+  </style>
+</svelte:head>
+
 <div class="center">
   <h1>Deno Playground</h1>
 </div>
@@ -102,10 +108,6 @@
   .center {
     text-align: center;
     font-family: "Cascadia Code";
-  }
-  @font-face {
-    font-family: "Cascadia Code";
-    src: url("src/fonts/CascadiaCode.ttf") format("truetype");
   }
   .output {
     font-size: 1.1rem;
