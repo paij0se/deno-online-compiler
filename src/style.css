@@ -1,0 +1,41 @@
+:global(body) {
+  background-color: #ffffff;
+  font-family: "Cascadia Code";
+}
+.center {
+  text-align: center;
+}
+.output {
+  font-size: 1.1rem;
+  color: #41ff00;
+  background-color: black;
+  overflow-y: scroll;
+  height: 300px;
+  max-width: 1000px;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+}
+.output pre code {
+  font-family: "Cascadia Code";
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+
+button {
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  font-family: "Cascadia Code";
+}
+
+/* Media Query for responsiveness */
+@media only screen and (max-width: 1000px) {
+  .output {
+    padding: 0.5rem;
+  }
+}
