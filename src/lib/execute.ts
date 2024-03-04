@@ -39,7 +39,7 @@ export const execute = async (value: string) => {
   const id = document.createElement("a");
   if (id) {
     id.textContent = `Share code snippet`;
-    id.href = `https://ad-c-9c338a775c74.herokuapp.com/code/${data.id}`;
+    id.href = location.href + `share?id=${data.id}`;
     id.target = "_blank";
     id.style.color = "blue";
     const idElement = document.querySelector(".id");
