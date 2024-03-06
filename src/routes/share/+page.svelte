@@ -3,7 +3,8 @@
   import { javascript } from "@codemirror/lang-javascript";
   import { oneDark } from "@codemirror/theme-one-dark";
   import { execute } from "../../lib/execute";
-  import { browser } from '$app/environment';
+  import { browser } from "$app/environment";
+  import { MetaTags } from "svelte-meta-tags";
   let value = "";
   if (browser) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -14,13 +15,14 @@
       fetch(`https://ad-c-9c338a775c74.herokuapp.com/code/${id}`)
         .then((res) => res.json())
         .then((data) => {
-          value = data
+          value = data;
           console.log(data);
         });
     }
   }
 </script>
 
+<MetaTags title="Share Code Snippets!" description={value} />
 <svelte:head>
   <style>
     @import url("https://fonts.cdnfonts.com/css/cascadia-code");

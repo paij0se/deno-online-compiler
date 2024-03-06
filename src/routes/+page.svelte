@@ -5,8 +5,10 @@
   import values from "../lib/codes";
   import { execute } from "../lib/execute";
   let value = values[Math.floor(Math.random() * values.length)];
+  import { MetaTags } from "svelte-meta-tags";
 </script>
 
+<MetaTags title="Deno Online Compiler" description="A online Playground for Deno." />
 <svelte:head>
   <style>
     @import url("https://fonts.cdnfonts.com/css/cascadia-code");
