@@ -1,39 +1,21 @@
-# create-svelte
+# Deno Online Compiler
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+![alt text](image.png)
 
-## Creating a project
+# About
 
-If you're seeing this, you've probably already done this step. Congrats!
+Welcome to Deno Online Compiler! Here, you can write and run your Deno code snippets hassle-free. Deno, the secure runtime for JavaScript and TypeScript, offers a convenient environment for building scalable server-side and command-line applications.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+With this editor, you can unleash the power of Deno's latest version, ensuring you have access to all the newest features and improvements. Whether you're a seasoned Deno developer or just getting started, our intuitive interface makes it easy to write, test, and debug your code.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Key features of our Deno code editor include:
 
-## Developing
+1. **Syntax Highlighting:** Enjoy syntax highlighting that makes your code easily readable and navigable.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+2. **Code Execution:** Run your Deno code snippets directly within the editor, eliminating the need for separate setups or environments.
 
-```bash
-npm run dev
+3. **Output Display:** View the output of your code execution within the editor itself, allowing for quick feedback and debugging.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+4. **Code Sharing:** Easily share your Deno code snippets with others by generating shareable links.
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-# deno-online-compiler
+Whether you're experimenting with Deno's capabilities, prototyping a new project, or refining existing code, our Deno code editor provides a seamless development experience. Dive in and start coding with confidence!

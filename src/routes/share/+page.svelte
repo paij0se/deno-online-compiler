@@ -22,7 +22,7 @@
   }
 </script>
 
-<MetaTags title="Share Code Snippets!" description={value} />
+<MetaTags title="Share Code Snippets!" />
 <svelte:head>
   <style>
     @import url("https://fonts.cdnfonts.com/css/cascadia-code");
