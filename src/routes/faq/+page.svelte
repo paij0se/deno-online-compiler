@@ -18,7 +18,7 @@
     {
       question: "Which API does this website use?",
       answer:
-        "This website uses the api-deno-compiler: https://github.com/drpaij0se/api-deno-compiler",
+        "This website uses the api-deno-compiler: https://github.com/paij0se/api-deno-compiler",
     },
   ];
 </script>

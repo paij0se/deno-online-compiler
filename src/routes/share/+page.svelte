@@ -71,7 +71,7 @@
   <div class="center">
     <p>
       Made with ❤️ by
-      <a href="https://github.com/drpaij0se" target="_blank">drpaij0se</a>
+      <a href="https://github.com/paij0se" target="_blank">paij0se</a>
     </p>
     <p>
       <a href="/faq">FAQ</a>
